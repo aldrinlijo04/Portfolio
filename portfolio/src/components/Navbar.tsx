@@ -15,7 +15,7 @@ const Navbar = ({ isNavOpen, setIsNavOpen }: NavbarProps) => {
           {/* Hamburger Menu Button */}
           <button 
             onClick={toggleNav}
-            className="relative z-50 p-1 -ml-65 rounded-lg hover:bg-gray-100 transition-all duration-300 group"
+            className="relative z-50 p-1 -ml-30 rounded-lg hover:bg-gray-100 transition-all duration-300 group"
           >
             <div className="w-6 h-5 flex flex-col justify-between">
               <span className={`h-0.5 w-full bg-gray-700 transform transition-all duration-300 origin-center ${isNavOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
@@ -25,7 +25,7 @@ const Navbar = ({ isNavOpen, setIsNavOpen }: NavbarProps) => {
           </button>
           
           {/* Logo/Name - Home Button */}
-          <div className="flex-shrink-0 -mr-50">
+          <div className="flex-shrink-0 -mr-10">
             <button 
               onClick={() => window.location.reload()}
               className="text-xl font-bold text-gray-900 font-aldrich hover:text-gray-700 transition-colors duration-200 cursor-pointer"
