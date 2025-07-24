@@ -18,7 +18,7 @@ const HeroSection = () => {
 
         {/* Foreground - Profile Image (Higher z-index) */}
         <div className="relative z-20">
-          <div className="w-72 h-96 md:w-80 md:h-[32rem] lg:w-96 lg:h-[36rem] overflow-hidden rounded-lg shadow-2xl">
+          <div className="w-30 h-70 md:w-80 md:h-[32rem] lg:w-96 lg:h-[32rem] overflow-hidden rounded-lg shadow-2xl">
             <img 
               src="/images/aldrin/aldrin_profile.JPG" 
               alt="Aldrin Lijo" 
