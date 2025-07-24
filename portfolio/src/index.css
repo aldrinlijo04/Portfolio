@@ -1,2 +1,20 @@
 @import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+
+/* Ensure consistent font loading and fallbacks */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Aldrich', monospace, sans-serif;
+  font-display: swap;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Prevent layout shift during font loading */
+.font-aldrich {
+  font-family: 'Aldrich', monospace, sans-serif;
+  font-display: swap;
+}

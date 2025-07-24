@@ -22,7 +22,7 @@ const HeroSection = () => {
             <img 
               src="/images/aldrin/aldrin_profile.JPG" 
               alt="Aldrin Lijo" 
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-center"
             />
           </div>
         </div>
