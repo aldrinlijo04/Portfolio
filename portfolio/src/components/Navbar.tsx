@@ -9,13 +9,13 @@ const Navbar = ({ isNavOpen, setIsNavOpen }: NavbarProps) => {
   }
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white">
+    <nav className="absolute top-0 left-0 right-0 z-50 bg-transparent">
       <div className="w-full px-6">
         <div className="flex justify-between items-center h-16">
           {/* Hamburger Menu Button */}
           <button 
             onClick={toggleNav}
-            className="relative z-50 p-2 rounded-lg hover:bg-gray-100 transition-all duration-300 group"
+            className="relative z-50 p-2 transition-all duration-300 group"
           >
             <div className="w-6 h-5 flex flex-col justify-between">
               <span className={`h-0.5 w-full bg-gray-700 transform transition-all duration-300 origin-center ${isNavOpen ? 'rotate-45 translate-y-2' : ''}`}></span>

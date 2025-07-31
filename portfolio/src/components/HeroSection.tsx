@@ -1,7 +1,7 @@
 const HeroSection = () => {
   return (
-    <main className="pt-16">
-      <div className="min-h-screen flex items-center justify-center bg-white relative overflow-hidden">
+    <main>
+      <div className="h-screen flex items-center justify-center bg-white relative overflow-hidden">
         {/* Background Text - ALDRIN */}
         <div className="absolute left-[5%] md:left-[8%] lg:left-[12%] top-[35%] md:top-[30%] lg:top-[55%] transform -translate-y-1/2 z-10">
           <h1 className="text-[12vw] sm:text-[10vw] md:text-[8vw] lg:text-[6vw] xl:text-[18vw] font-black text-black tracking-tighter leading-none select-none font-aldrich opacity-90 max-w-none">
