@@ -10,7 +10,7 @@ const HeroSection = () => {
         </div>
 
         {/* Background Text - RIN */}
-        <div className="absolute right-[5%] md:right-[8%] lg:right-[14%] top-[35%] md:top-[30%] lg:top-[55%] transform -translate-y-1/2 z-10">
+        <div className="absolute right-[5%] md:right-[8%] lg:right-[17.5%] top-[35%] md:top-[30%] lg:top-[55%] transform -translate-y-1/2 z-10">
           <h1 className="text-[12vw] sm:text-[10vw] md:text-[8vw] lg:text-[6vw] xl:text-[18vw] font-black text-black tracking-tighter leading-none select-none font-aldrich opacity-90 max-w-none">
             RIN
           </h1>
@@ -28,7 +28,7 @@ const HeroSection = () => {
         </div>
 
         {/* Background Text - LIJO (Behind image) */}
-        <div className="absolute bottom-[2%] md:bottom-[3%] lg:bottom-[1%] left-1/2 transform -translate-x-1/2 z-10">
+        <div className="absolute bottom-[2%] md:bottom-[3%] lg:bottom-[5%] left-1/2 transform -translate-x-1/2 z-10">
           <h2 className="text-[10vw] sm:text-[8vw] md:text-[7vw] lg:text-[5vw] xl:text-[18vw] font-black text-black tracking-wider leading-none select-none font-aldrich opacity-90 max-w-none">
             LIJO
           </h2>
