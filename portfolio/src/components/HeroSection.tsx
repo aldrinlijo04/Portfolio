@@ -1,45 +1,62 @@
 const HeroSection = () => {
   return (
-    <main>
-      <div className="h-screen flex items-center justify-center bg-white relative overflow-hidden">
-        {/* Background Text - ALDRIN */}
-        <div className="absolute left-[5%] md:left-[8%] lg:left-[10%] top-[50%] md:top-[30%] lg:top-[60%] transform -translate-y-1/2 z-10">
-          <h1 className="text-[12vw] sm:text-[10vw] md:text-[8vw] lg:text-[6vw] xl:text-[18vw] font-black text-black tracking-tighter leading-none select-none font-aldrich opacity-90 max-w-none">
-            ALD
-          </h1>
+    <main className="relative w-full h-screen overflow-hidden">
+      {/* Background Image - Curtain Effect (no top space, rounded bottom) */}
+      <div className="absolute inset-0 w-full h-full">
+        <div className="w-full h-full px-8 pb-8">
+          <img 
+            src="/images/aldrin/aldrin_profile2.jpeg" 
+            alt="Aldrin Lijo presenting" 
+            className="w-full h-full object-cover object-center rounded-b-3xl"
+          />
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-x-8 top-0 bottom-8 bg-black/30 rounded-b-3xl"></div>
         </div>
+      </div>
 
-        {/* Background Text - RIN */}
-        <div className="absolute right-[5%] md:right-[8%] lg:right-[13%] top-[35%] md:top-[30%] lg:top-[60%] transform -translate-y-1/2 z-10">
-          <h1 className="text-[12vw] sm:text-[10vw] md:text-[8vw] lg:text-[6vw] xl:text-[18vw] font-black text-black tracking-tighter leading-none select-none font-aldrich opacity-90 max-w-none">
-            RIN
-          </h1>
-        </div>
-
-        {/* Foreground - Profile Image (Higher z-index) */}
-        <div className="relative z-20 flex-shrink-0">
-          {/* Glass frame container */}
-          <div className="relative p-4 rounded-2xl backdrop-blur-xl bg-white/10 border border-white/20 shadow-2xl shadow-black/10">
-            {/* Inner glass border */}
-            <div className="relative rounded-xl overflow-hidden border border-white/30 shadow-inner">
-              <div className="w-[55vw] h-[73vw] sm:w-[45vw] sm:h-[60vw] md:w-[38vw] md:h-[50vw] lg:w-[32vw] lg:h-[42vw] xl:w-[28vw] xl:h-[37vw] max-w-[450px] max-h-[600px]">
-                <img 
-                  src="/images/aldrin/aldrin_profile.JPG" 
-                  alt="Aldrin Lijo" 
-                  className="w-full h-full object-cover object-center"
-                />
+      {/* Bottom Text Section - Enlarged */}
+      <div className="absolute bottom-0 left-0 right-0 bg-white">
+        <div className="flex items-center justify-center px-16 py-12">
+          {/* ALDRIN Text */}
+          <div className="flex-1 text-right pr-12">
+            <h1 className="text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] xl:text-[12rem] font-black text-black tracking-tight leading-none font-aldrich">
+              ALDRIN
+            </h1>
+          </div>
+          
+          {/* Center Navigation Element - Vertical */}
+          <div className="flex-shrink-0 mx-12">
+            <div className="group relative">
+              {/* Vertical Elongated Button */}
+              <button className="elegant-button py-12 px-4 bg-black rounded-full hover:bg-gray-800 transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-black/50">
+                <div className="w-1 h-8 bg-white rounded-full"></div>
+              </button>
+              
+              {/* Hover Navigation Menu */}
+              <div className="nav-hover-menu absolute bottom-full left-1/2 transform -translate-x-1/2 mb-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-out">
+                <div className="bg-black rounded-2xl px-8 py-6 shadow-2xl backdrop-blur-lg">
+                  <div className="flex flex-col space-y-4 min-w-[180px]">
+                    <a href="#home" className="text-white font-aldrich text-xl hover:text-gray-300 transition-colors duration-200 text-center py-2">Home</a>
+                    <a href="#about" className="text-white font-aldrich text-xl hover:text-gray-300 transition-colors duration-200 text-center py-2">About</a>
+                    <a href="#projects" className="text-white font-aldrich text-xl hover:text-gray-300 transition-colors duration-200 text-center py-2">Projects</a>
+                    <a href="#skills" className="text-white font-aldrich text-xl hover:text-gray-300 transition-colors duration-200 text-center py-2">Skills</a>
+                    <a href="#contact" className="text-white font-aldrich text-xl hover:text-gray-300 transition-colors duration-200 text-center py-2">Contact</a>
+                  </div>
+                  {/* Arrow pointing down */}
+                  <div className="absolute top-full left-1/2 transform -translate-x-1/2 -mt-1">
+                    <div className="w-3 h-3 bg-black rotate-45"></div>
+                  </div>
+                </div>
               </div>
-              {/* Glass overlay with subtle highlight */}
-              <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-black/5 pointer-events-none"></div>
             </div>
           </div>
-        </div>
-
-        {/* Background Text - LIJO (Behind image) */}
-        <div className="absolute bottom-[2%] md:bottom-[3%] lg:bottom-[0%] left-1/2 transform -translate-x-1/2 z-10">
-          <h2 className="text-[10vw] sm:text-[8vw] md:text-[7vw] lg:text-[5vw] xl:text-[18vw] font-black text-black tracking-wider leading-none select-none font-aldrich opacity-90 max-w-none">
-            LIJO
-          </h2>
+          
+          {/* LIJO Text */}
+          <div className="flex-1 text-left pl-12">
+            <h1 className="text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] xl:text-[12rem] font-black text-black tracking-tight leading-none font-aldrich">
+              LIJO
+            </h1>
+          </div>
         </div>
       </div>
     </main>
