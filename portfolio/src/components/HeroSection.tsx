@@ -13,7 +13,7 @@ const HeroSection = () => {
   const navItemsRef = useRef<(HTMLAnchorElement | null)[]>([])
   
   // Navigation items array
-  const navItems = ['home','About', 'Projects', 'Skills', 'Contact']
+  const navItems = ['Home', 'About', 'Projects', 'Skills', 'Contact']
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -145,8 +145,11 @@ const HeroSection = () => {
           <div ref={imageRef} className="w-full h-full rounded-b-[3rem] overflow-hidden">
             <img 
               src="/images/aldrin/aldrin_profile2.jpeg" 
-              alt="Aldrin Lijo presenting" 
+              alt="Aldrin Lijo - Full Stack Developer Portfolio" 
               className="w-full h-full object-cover object-center"
+              loading="eager"
+              decoding="async"
+              fetchPriority="high"
             />
           </div>
           {/* Dark overlay for text readability - matching rounded corners */}
@@ -186,8 +189,9 @@ const HeroSection = () => {
               
               {/* I */}
               <h1 
-                onMouseEnter={() => handleTextHover(null)}
-                onMouseLeave={() => handleTextLeave(null)}
+                ref={iRef}
+                onMouseEnter={() => handleTextHover(iRef.current)}
+                onMouseLeave={() => handleTextLeave(iRef.current)}
                 className="text-8xl sm:text-9xl md:text-[11rem] lg:text-[13rem] xl:text-[16rem] font-black text-black tracking-tight leading-none font-aldrich cursor-pointer"
               >
                 I

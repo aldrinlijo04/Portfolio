@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import HeroSection from './components/HeroSection'
+import ErrorBoundary from './components/ErrorBoundary'
 
 function App() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
@@ -40,18 +41,20 @@ function App() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Custom Cursor */}
-      <div 
-        className={`custom-cursor ${isHovering ? 'hover' : ''}`}
-        style={{
-          left: `${mousePosition.x - 10}px`,
-          top: `${mousePosition.y - 10}px`,
-        }}
-      />
-      
-      <HeroSection />
-    </div>
+    <ErrorBoundary>
+      <div className="min-h-screen bg-white">
+        {/* Custom Cursor */}
+        <div 
+          className={`custom-cursor ${isHovering ? 'hover' : ''}`}
+          style={{
+            left: `${mousePosition.x - 10}px`,
+            top: `${mousePosition.y - 10}px`,
+          }}
+        />
+        
+        <HeroSection />
+      </div>
+    </ErrorBoundary>
   )
 }
 
