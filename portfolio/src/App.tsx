@@ -1,12 +1,22 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-// import Navbar from './components/Navbar'
+import LoadingScreen from './components/LoadingScreen'
 import HeroSection from './components/HeroSection'
 import AboutSection from './components/AboutSection'
 
 function App() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [isHovering, setIsHovering] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
+  const [showContent, setShowContent] = useState(false)
+
+  // Handle loading completion
+  const handleLoadingComplete = () => {
+    setIsLoading(false)
+    setTimeout(() => {
+      setShowContent(true)
+    }, 100) // Small delay to ensure smooth transition
+  }
 
   useEffect(() => {
     let animationFrame: number
@@ -55,20 +65,29 @@ function App() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Custom Cursor */}
-      <div 
-        className={`custom-cursor ${isHovering ? 'hover' : ''}`}
-        style={{
-          left: `${mousePosition.x - 10}px`,
-          top: `${mousePosition.y - 10}px`,
-        }}
-      />
-      
-      {/* <Navbar /> */}
-      <HeroSection />
-      <AboutSection />
-    </div>
+    <>
+      {/* Loading Screen */}
+      {isLoading && (
+        <LoadingScreen onLoadingComplete={handleLoadingComplete} />
+      )}
+
+      {/* Main Application */}
+      {showContent && (
+        <div className="min-h-screen bg-white">
+          {/* Custom Cursor */}
+          <div 
+            className={`custom-cursor ${isHovering ? 'hover' : ''}`}
+            style={{
+              left: `${mousePosition.x - 10}px`,
+              top: `${mousePosition.y - 10}px`,
+            }}
+          />
+          
+          <HeroSection />
+          <AboutSection />
+        </div>
+      )}
+    </>
   )
 }
 

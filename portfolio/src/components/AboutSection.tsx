@@ -185,7 +185,7 @@ const AboutSection = () => {
                     type="text"
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
-                    placeholder="Get to know me?"
+                    placeholder="Get to know me?..type here"
                     className="font-aldrich border-none outline-none transition-colors duration-300 placeholder-white placeholder-opacity-75"
                     style={{
                       position: 'absolute',
