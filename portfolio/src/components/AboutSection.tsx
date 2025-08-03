@@ -47,7 +47,7 @@ const AboutSection = () => {
           <div style={{ 
             position: 'absolute',
             top: '0px',
-            left: '8%',
+            left: '5%',
             width: 'clamp(600px, 40vw, 800px)',
             height: 'clamp(100px, 8vw, 140px)'
           }}>
@@ -103,7 +103,7 @@ const AboutSection = () => {
           <div style={{ 
             position: 'absolute',
             top: '0px',
-            right: '8%',
+            right: '5%',
             width: 'clamp(650px, 45vw, 850px)',
             height: 'clamp(700px, 50vw, 900px)'
           }}>
@@ -181,8 +181,8 @@ const AboutSection = () => {
               <p 
                 className="crystal-glass-content"
                 style={{
-                  fontSize: 'clamp(32px, 3.5vw, 45px)',
-                  lineHeight: '2',
+                  fontSize: 'clamp(24px, 2.5vw, 32px)',
+                  lineHeight: '1.8',
                   color: '#ffffff',
                   margin: '0',
                   textShadow: '0 2px 4px rgba(0, 0, 0, 0.5)'
