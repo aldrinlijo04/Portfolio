@@ -8,14 +8,12 @@ const RunwayAnimation = () => {
     const container = containerRef.current
     if (!container) return
 
-    // Billboard text messages
+    // Billboard text messages - reduced for performance
     const messages = [
       "AI SYSTEMS ARCHITECT",
       "FULL STACK DEVELOPER", 
       "RUST & GO SPECIALIST",
-      "MACHINE LEARNING ENGINEER",
-      "MICROSERVICES EXPERT",
-      "NETWORKING ENTHUSIAST"
+      "MACHINE LEARNING ENGINEER"
     ]
 
     // Create text elements
@@ -40,7 +38,7 @@ const RunwayAnimation = () => {
       textElements.push(element)
     })
 
-    // Animate text elements from left to right
+    // Animate text elements from left to right with performance optimizations
     const animateBillboard = () => {
       textElements.forEach((element, index) => {
         gsap.fromTo(element, 
@@ -51,10 +49,12 @@ const RunwayAnimation = () => {
           {
             x: window.innerWidth + element.offsetWidth,
             opacity: 1,
-            duration: 10,
-            delay: index * 1.5,
+            duration: 12,
+            delay: index * 2,
             repeat: -1,
             ease: "none",
+            force3D: true, // Enable hardware acceleration
+            will: "transform", // Optimize for transform changes
             onStart: () => {
               gsap.set(element, { opacity: 1 })
             },

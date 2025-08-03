@@ -26,7 +26,7 @@ body::-webkit-scrollbar {
   line-height: 1 !important;
 }
 
-/* Custom Cursor */
+/* Custom Cursor - Optimized for performance */
 .custom-cursor {
   position: fixed;
   width: 20px;
@@ -37,8 +37,10 @@ body::-webkit-scrollbar {
   pointer-events: none;
   z-index: 9999;
   mix-blend-mode: difference;
-  transition: transform 0.2s ease-out, background-color 0.2s ease-out;
+  transition: transform 0.1s ease-out, background-color 0.1s ease-out;
   backdrop-filter: blur(2px);
+  will-change: transform;
+  transform: translateZ(0); /* Force hardware acceleration */
 }
 
 .custom-cursor.hover {

@@ -91,7 +91,7 @@ const AboutSection = () => {
           speed={0.3}
           scanlineFrequency={0.5}
           warpAmount={0.2}
-          resolutionScale={1.0}
+          resolutionScale={0.6}
         />
       </div>
 

@@ -9,8 +9,18 @@ function App() {
   const [isHovering, setIsHovering] = useState(false)
 
   useEffect(() => {
+    let animationFrame: number
+    
     const updateMousePosition = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY })
+      // Cancel previous frame if it hasn't run yet
+      if (animationFrame) {
+        cancelAnimationFrame(animationFrame)
+      }
+      
+      // Use requestAnimationFrame to throttle updates
+      animationFrame = requestAnimationFrame(() => {
+        setMousePosition({ x: e.clientX, y: e.clientY })
+      })
     }
 
     const handleMouseEnter = (e: Event) => {
@@ -27,14 +37,17 @@ function App() {
       }
     }
 
-    // Track mouse position
-    window.addEventListener('mousemove', updateMousePosition)
+    // Track mouse position with throttling
+    window.addEventListener('mousemove', updateMousePosition, { passive: true })
     
     // Use event delegation for hover states
-    document.addEventListener('mouseover', handleMouseEnter)
-    document.addEventListener('mouseout', handleMouseLeave)
+    document.addEventListener('mouseover', handleMouseEnter, { passive: true })
+    document.addEventListener('mouseout', handleMouseLeave, { passive: true })
 
     return () => {
+      if (animationFrame) {
+        cancelAnimationFrame(animationFrame)
+      }
       window.removeEventListener('mousemove', updateMousePosition)
       document.removeEventListener('mouseover', handleMouseEnter)
       document.removeEventListener('mouseout', handleMouseLeave)
