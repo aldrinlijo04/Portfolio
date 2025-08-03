@@ -43,13 +43,13 @@ const AboutSection = () => {
           }}
         >
           
-          {/* Left Side - Query Input - Responsive Sizing */}
+          {/* Left Side - Query Input - Increased Sizing */}
           <div style={{ 
             position: 'absolute',
             top: '0px',
             left: '8%',
-            width: 'clamp(500px, 35vw, 700px)',
-            height: 'clamp(80px, 6vw, 120px)'
+            width: 'clamp(600px, 40vw, 800px)',
+            height: 'clamp(100px, 8vw, 140px)'
           }}>
             <form onSubmit={handleSubmit} style={{ width: '100%', height: '100%' }}>
               <div style={{ position: 'relative', width: '100%', height: '100%' }}>
@@ -63,12 +63,12 @@ const AboutSection = () => {
                     position: 'absolute',
                     top: '0px',
                     left: '0px',
-                    padding: 'clamp(15px, 1.5vw, 20px) clamp(20px, 2vw, 30px)',
-                    fontSize: 'clamp(24px, 2.5vw, 34px)',
+                    padding: 'clamp(18px, 2vw, 25px) clamp(25px, 2.5vw, 35px)',
+                    fontSize: 'clamp(28px, 3vw, 38px)',
                     fontWeight: '500',
                     backgroundColor: '#6b7280',
                     color: 'white',
-                    borderRadius: 'clamp(60px, 5vw, 90px)',
+                    borderRadius: 'clamp(70px, 6vw, 100px)',
                     width: '100%',
                     height: '100%',
                     boxSizing: 'border-box'
@@ -79,16 +79,16 @@ const AboutSection = () => {
                   className="transition-colors duration-300"
                   style={{
                     position: 'absolute',
-                    right: 'clamp(8px, 1vw, 12px)',
+                    right: 'clamp(10px, 1.2vw, 15px)',
                     top: '50%',
                     transform: 'translateY(-50%)',
                     backgroundColor: '#374151',
                     color: 'white',
-                    padding: 'clamp(8px, 1vw, 12px) clamp(15px, 1.5vw, 20px)',
+                    padding: 'clamp(10px, 1.2vw, 15px) clamp(18px, 2vw, 25px)',
                     borderRadius: '50px',
                     border: 'none',
                     cursor: 'pointer',
-                    fontSize: 'clamp(14px, 1.2vw, 18px)'
+                    fontSize: 'clamp(16px, 1.5vw, 22px)'
                   }}
                   onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#000000'}
                   onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#777b82ff'}
@@ -99,13 +99,13 @@ const AboutSection = () => {
             </form>
           </div>
 
-          {/* Right Side - Response Container - Responsive Sizing */}
+          {/* Right Side - Response Container - Increased Sizing */}
           <div style={{ 
             position: 'absolute',
             top: '0px',
             right: '8%',
-            width: 'clamp(550px, 40vw, 750px)',
-            height: 'clamp(600px, 45vw, 800px)'
+            width: 'clamp(650px, 45vw, 850px)',
+            height: 'clamp(700px, 50vw, 900px)'
           }}>
             <div 
               className="font-aldrich crystal-glass"
@@ -115,7 +115,7 @@ const AboutSection = () => {
                 left: '0px',
                 width: '100%',
                 height: '100%',
-                padding: 'clamp(40px, 4vw, 60px)',
+                padding: 'clamp(50px, 5vw, 70px)',
                 borderRadius: '26px',
                 boxSizing: 'border-box',
                 
@@ -181,7 +181,7 @@ const AboutSection = () => {
               <p 
                 className="crystal-glass-content"
                 style={{
-                  fontSize: 'clamp(28px, 3vw, 40px)',
+                  fontSize: 'clamp(32px, 3.5vw, 45px)',
                   lineHeight: '2',
                   color: '#ffffff',
                   margin: '0',
