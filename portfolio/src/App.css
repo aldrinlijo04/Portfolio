@@ -20,6 +20,12 @@ body::-webkit-scrollbar {
   display: none; /* Safari and Chrome */
 }
 
+/* Force uniform text sizing across all environments */
+.uniform-text {
+  font-size: 16rem !important;
+  line-height: 1 !important;
+}
+
 /* Custom Cursor */
 .custom-cursor {
   position: fixed;

@@ -116,32 +116,11 @@ const HeroSection = () => {
     })
   }
 
-  // Text hover animations
-  const handleTextHover = (element: HTMLHeadingElement | null) => {
-    if (element) {
-      gsap.to(element, {
-        scale: 1.02,
-        duration: 0.5,
-        ease: "power2.out"
-      })
-    }
-  }
-
-  const handleTextLeave = (element: HTMLHeadingElement | null) => {
-    if (element) {
-      gsap.to(element, {
-        scale: 1,
-        duration: 0.5,
-        ease: "power2.out"
-      })
-    }
-  }
-
   return (
     <main ref={containerRef} className="relative w-full h-screen overflow-hidden bg-white">
       {/* Background Image - Curtain Effect with rounded bottom corners, cut above text */}
       <div className="absolute top-0 left-0 right-0 h-[calc(100vh-300px)]">
-        <div className="w-full h-full rounded-b-[3rem] overflow-hidden">
+        <div className="w-full h-full rounded-b-[3rem] overflow-hidden px-4 sm:px-6 md:px-8 lg:px-12">
           <div ref={imageRef} className="w-full h-full rounded-b-[3rem] overflow-hidden">
             <img 
               src="/images/aldrin/aldrin_profile2.jpeg" 
@@ -152,8 +131,6 @@ const HeroSection = () => {
               fetchPriority="high"
             />
           </div>
-          {/* Dark overlay for text readability - matching rounded corners */}
-          <div ref={overlayRef} className="absolute inset-0 bg-black/30 rounded-b-[3rem]"></div>
         </div>
       </div>
 
@@ -162,27 +139,23 @@ const HeroSection = () => {
         <div className="flex items-end justify-between px-12 py-6 w-full mt-12">
           
           {/* ALDRIN Text - Left Side */}
-          <div className="flex-1 flex justify-end pr-8">
+          <div className="flex-1 flex justify-end pr-16">
             <h1 
               ref={aldrinRef}
-              onMouseEnter={() => handleTextHover(aldrinRef.current)}
-              onMouseLeave={() => handleTextLeave(aldrinRef.current)}
-              className="text-8xl sm:text-9xl md:text-[11rem] lg:text-[13rem] xl:text-[16rem] font-black text-black tracking-tight leading-none font-aldrich cursor-pointer"
+              className="uniform-text font-black text-black tracking-tight leading-none font-aldrich"
             >
               ALDRIN
             </h1>
           </div>
           
           {/* LIJO Text with Navigation on "O" - Right Side */}
-          <div className="flex-1 flex justify-start pl-8">
+          <div className="flex-1 flex justify-start pl-16">
             <div className="flex items-end">
               
               {/* L */}
               <h1 
                 ref={lRef}
-                onMouseEnter={() => handleTextHover(lRef.current)}
-                onMouseLeave={() => handleTextLeave(lRef.current)}
-                className="text-8xl sm:text-9xl md:text-[11rem] lg:text-[13rem] xl:text-[16rem] font-black text-black tracking-tight leading-none font-aldrich cursor-pointer"
+                className="uniform-text font-black text-black tracking-tight leading-none font-aldrich"
               >
                 L
               </h1>
@@ -190,9 +163,7 @@ const HeroSection = () => {
               {/* I */}
               <h1 
                 ref={iRef}
-                onMouseEnter={() => handleTextHover(iRef.current)}
-                onMouseLeave={() => handleTextLeave(iRef.current)}
-                className="text-8xl sm:text-9xl md:text-[11rem] lg:text-[13rem] xl:text-[16rem] font-black text-black tracking-tight leading-none font-aldrich cursor-pointer"
+                className="uniform-text font-black text-black tracking-tight leading-none font-aldrich"
               >
                 I
               </h1>
@@ -200,9 +171,7 @@ const HeroSection = () => {
               {/* J */}
               <h1 
                 ref={joRef}
-                onMouseEnter={() => handleTextHover(joRef.current)}
-                onMouseLeave={() => handleTextLeave(joRef.current)}
-                className="text-8xl sm:text-9xl md:text-[11rem] lg:text-[13rem] xl:text-[16rem] font-black text-black tracking-tight leading-none font-aldrich cursor-pointer"
+                className="uniform-text font-black text-black tracking-tight leading-none font-aldrich"
               >
                 J
               </h1>
@@ -215,12 +184,12 @@ const HeroSection = () => {
                   onMouseLeave={handleNavLeave}
                   className="relative cursor-pointer group"
                 >
-                  <h1 className="text-8xl sm:text-9xl md:text-[11rem] lg:text-[13rem] xl:text-[16rem] font-black text-black tracking-tight leading-none font-aldrich hover:text-gray-700 transition-colors">
+                  <h1 className="uniform-text font-black text-black tracking-tight leading-none font-aldrich hover:text-gray-700 transition-colors">
                     O
                   </h1>
                   
                   {/* Horizontal line through the center of O */}
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 sm:w-16 md:w-20 lg:w-24 xl:w-32 h-2 sm:h-3 md:h-4 lg:h-5 xl:h-6 bg-black rounded-full group-hover:bg-gray-700 transition-colors"></div>
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-3 bg-black rounded-full group-hover:bg-gray-700 transition-colors"></div>
                 </div>
                 
                 {/* Navigation Items - Slide from left to right but arranged vertically */}
