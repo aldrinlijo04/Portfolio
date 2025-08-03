@@ -176,8 +176,9 @@ const HeroSection = () => {
               ref={aldrinRef}
               className="font-black text-black tracking-tight leading-none font-aldrich"
               style={{ 
-                fontSize: '16rem',
-                lineHeight: '1'
+                fontSize: 'clamp(8rem, 12vw, 16rem)',
+                lineHeight: '1',
+                fontFamily: "'Aldrich', monospace, sans-serif"
               }}
             >
               ALDRIN
@@ -196,8 +197,9 @@ const HeroSection = () => {
                 ref={lRef}
                 className="font-black text-black tracking-tight leading-none font-aldrich"
                 style={{ 
-                  fontSize: '16rem',
-                  lineHeight: '1'
+                  fontSize: 'clamp(8rem, 12vw, 16rem)',
+                  lineHeight: '1',
+                  fontFamily: "'Aldrich', monospace, sans-serif"
                 }}
               >
                 L
@@ -208,8 +210,9 @@ const HeroSection = () => {
                 ref={iRef}
                 className="font-black text-black tracking-tight leading-none font-aldrich"
                 style={{ 
-                  fontSize: '16rem',
-                  lineHeight: '1'
+                  fontSize: 'clamp(8rem, 12vw, 16rem)',
+                  lineHeight: '1',
+                  fontFamily: "'Aldrich', monospace, sans-serif"
                 }}
               >
                 I
@@ -220,8 +223,9 @@ const HeroSection = () => {
                 ref={joRef}
                 className="font-black text-black tracking-tight leading-none font-aldrich"
                 style={{ 
-                  fontSize: '16rem',
-                  lineHeight: '1'
+                  fontSize: 'clamp(8rem, 12vw, 16rem)',
+                  lineHeight: '1',
+                  fontFamily: "'Aldrich', monospace, sans-serif"
                 }}
               >
                 J
@@ -238,8 +242,9 @@ const HeroSection = () => {
                   <h1 
                     className="font-black text-black tracking-tight leading-none font-aldrich hover:text-gray-700 transition-colors"
                     style={{ 
-                      fontSize: '16rem',
-                      lineHeight: '1'
+                      fontSize: 'clamp(8rem, 12vw, 16rem)',
+                      lineHeight: '1',
+                      fontFamily: "'Aldrich', monospace, sans-serif"
                     }}
                   >
                     O
