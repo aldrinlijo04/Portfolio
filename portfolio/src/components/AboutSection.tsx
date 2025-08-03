@@ -31,26 +31,26 @@ const AboutSection = () => {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 min-h-screen flex items-center justify-center" style={{ padding: '0 40px' }}>
+      <div className="relative z-10 min-h-screen flex items-center justify-center">
         <div 
           style={{ 
-            display: 'grid',
-            gridTemplateColumns: '800px 750px',
-            gap: '60px',
-            width: '100%',
-            maxWidth: '1610px',
-            alignItems: 'flex-start'
+            position: 'relative',
+            width: '1610px',
+            height: '800px',
+            margin: '0 auto'
           }}
         >
           
-          {/* Left Side - Query Input */}
+          {/* Left Side - Query Input - Absolute Positioning */}
           <div style={{ 
-            display: 'flex', 
-            alignItems: 'flex-start',
-            justifyContent: 'flex-start'
+            position: 'absolute',
+            top: '0px',
+            left: '0px',
+            width: '700px',
+            height: '120px'
           }}>
-            <form onSubmit={handleSubmit} style={{ width: '700px' }}>
-              <div style={{ position: 'relative' }}>
+            <form onSubmit={handleSubmit} style={{ width: '100%', height: '100%' }}>
+              <div style={{ position: 'relative', width: '100%', height: '100%' }}>
                 <input
                   type="text"
                   value={query}
@@ -58,6 +58,9 @@ const AboutSection = () => {
                   placeholder="Get to know me?"
                   className="font-aldrich border-none outline-none transition-colors duration-300 placeholder-white placeholder-opacity-75"
                   style={{
+                    position: 'absolute',
+                    top: '0px',
+                    left: '0px',
                     padding: '20px 30px',
                     fontSize: '34px',
                     fontWeight: '500',
@@ -94,15 +97,20 @@ const AboutSection = () => {
             </form>
           </div>
 
-          {/* Right Side - Response Container */}
+          {/* Right Side - Response Container - Absolute Positioning */}
           <div style={{ 
-            display: 'flex', 
-            alignItems: 'flex-start', 
-            justifyContent: 'flex-end' 
+            position: 'absolute',
+            top: '0px',
+            right: '0px',
+            width: '750px',
+            height: '800px'
           }}>
             <div 
               className="font-aldrich crystal-glass"
               style={{
+                position: 'absolute',
+                top: '0px',
+                left: '0px',
                 width: '750px',
                 height: '800px',
                 padding: '60px',
