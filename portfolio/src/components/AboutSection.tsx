@@ -31,14 +31,14 @@ const AboutSection = () => {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 min-h-screen flex items-center justify-center px-7 md:px-8 lg:px-10">
+      <div className="relative z-10 min-h-screen flex items-center justify-center" style={{ padding: '0 40px' }}>
         <div 
-          className="w-full"
           style={{ 
             display: 'grid',
-            gridTemplateColumns: '1.4fr 0.6fr',
+            gridTemplateColumns: '800px 750px',
             gap: '60px',
-            maxWidth: '1400px',
+            width: '100%',
+            maxWidth: '1610px',
             alignItems: 'flex-start'
           }}
         >
@@ -49,14 +49,14 @@ const AboutSection = () => {
             alignItems: 'flex-start',
             justifyContent: 'flex-start'
           }}>
-            <form onSubmit={handleSubmit} style={{ width: '100%', maxWidth: '600px', minWidth: '700px' }}>
+            <form onSubmit={handleSubmit} style={{ width: '700px' }}>
               <div style={{ position: 'relative' }}>
                 <input
                   type="text"
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                   placeholder="Get to know me?"
-                  className="w-full font-aldrich border-none outline-none transition-colors duration-300 placeholder-white placeholder-opacity-75"
+                  className="font-aldrich border-none outline-none transition-colors duration-300 placeholder-white placeholder-opacity-75"
                   style={{
                     padding: '20px 30px',
                     fontSize: '34px',
@@ -64,8 +64,9 @@ const AboutSection = () => {
                     backgroundColor: '#6b7280',
                     color: 'white',
                     borderRadius: '90px',
-                    width: '100%',
-                    minHeight: '120px'
+                    width: '700px',
+                    height: '120px',
+                    boxSizing: 'border-box'
                   }}
                 />
                 <button
@@ -102,12 +103,11 @@ const AboutSection = () => {
             <div 
               className="font-aldrich crystal-glass"
               style={{
-                maxWidth: '800px',
-                minWidth: '750px',
-                maxHeight: '850px',
-                minHeight: '800px',
+                width: '750px',
+                height: '800px',
                 padding: '60px',
                 borderRadius: '26px',
+                boxSizing: 'border-box',
                 
                 // Crystal glass base - adjusted for dark background
                 backgroundColor: 'rgba(255, 255, 255, 0.05)',
