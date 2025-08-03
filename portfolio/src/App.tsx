@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import Navbar from './components/Navbar'
+// import Navbar from './components/Navbar'
 import HeroSection from './components/HeroSection'
 import AboutSection from './components/AboutSection'
 
@@ -65,7 +65,7 @@ function App() {
         }}
       />
       
-      <Navbar />
+      {/* <Navbar /> */}
       <HeroSection />
       <AboutSection />
     </div>
