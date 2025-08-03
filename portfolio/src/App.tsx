@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import './App.css'
+import Navbar from './components/Navbar'
 import HeroSection from './components/HeroSection'
+import AboutSection from './components/AboutSection'
 
 function App() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
@@ -49,7 +51,10 @@ function App() {
           top: `${mousePosition.y - 10}px`,
         }}
       />
+      
+      <Navbar />
       <HeroSection />
+      <AboutSection />
     </div>
   )
 }
