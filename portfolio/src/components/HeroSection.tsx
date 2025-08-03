@@ -176,7 +176,7 @@ const HeroSection = () => {
               ref={aldrinRef}
               className="font-black text-black tracking-tight leading-none font-aldrich"
               style={{ 
-                fontSize: 'clamp(8rem, 12vw, 16rem)',
+                fontSize: 'clamp(10rem, 14vw, 18rem)',
                 lineHeight: '1',
                 fontFamily: "'Aldrich', monospace, sans-serif"
               }}
@@ -197,7 +197,7 @@ const HeroSection = () => {
                 ref={lRef}
                 className="font-black text-black tracking-tight leading-none font-aldrich"
                 style={{ 
-                  fontSize: 'clamp(8rem, 12vw, 16rem)',
+                  fontSize: 'clamp(10rem, 14vw, 18rem)',
                   lineHeight: '1',
                   fontFamily: "'Aldrich', monospace, sans-serif"
                 }}
@@ -210,7 +210,7 @@ const HeroSection = () => {
                 ref={iRef}
                 className="font-black text-black tracking-tight leading-none font-aldrich"
                 style={{ 
-                  fontSize: 'clamp(8rem, 12vw, 16rem)',
+                  fontSize: 'clamp(10rem, 14vw, 18rem)',
                   lineHeight: '1',
                   fontFamily: "'Aldrich', monospace, sans-serif"
                 }}
@@ -223,7 +223,7 @@ const HeroSection = () => {
                 ref={joRef}
                 className="font-black text-black tracking-tight leading-none font-aldrich"
                 style={{ 
-                  fontSize: 'clamp(8rem, 12vw, 16rem)',
+                  fontSize: 'clamp(10rem, 14vw, 18rem)',
                   lineHeight: '1',
                   fontFamily: "'Aldrich', monospace, sans-serif"
                 }}
@@ -242,7 +242,7 @@ const HeroSection = () => {
                   <h1 
                     className="font-black text-black tracking-tight leading-none font-aldrich hover:text-gray-700 transition-colors"
                     style={{ 
-                      fontSize: 'clamp(8rem, 12vw, 16rem)',
+                      fontSize: 'clamp(10rem, 14vw, 18rem)',
                       lineHeight: '1',
                       fontFamily: "'Aldrich', monospace, sans-serif"
                     }}
