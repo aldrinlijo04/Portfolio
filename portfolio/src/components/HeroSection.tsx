@@ -161,7 +161,7 @@ const HeroSection = () => {
         <div 
           className="flex items-end justify-between w-full"
           style={{ 
-            padding: '24px 48px',
+            padding: '22px 30px',
             marginTop: '30px',
             height: '100%'
           }}
