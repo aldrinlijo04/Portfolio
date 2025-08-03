@@ -35,19 +35,21 @@ const AboutSection = () => {
         <div 
           style={{ 
             position: 'relative',
-            width: '1610px',
+            width: '100vw',
+            maxWidth: '1920px',
             height: '800px',
-            margin: '0 auto'
+            margin: '0 auto',
+            padding: '0 5vw'
           }}
         >
           
-          {/* Left Side - Query Input - Absolute Positioning */}
+          {/* Left Side - Query Input - Responsive Sizing */}
           <div style={{ 
             position: 'absolute',
             top: '0px',
-            left: '0px',
-            width: '700px',
-            height: '120px'
+            left: '8%',
+            width: 'clamp(500px, 35vw, 700px)',
+            height: 'clamp(80px, 6vw, 120px)'
           }}>
             <form onSubmit={handleSubmit} style={{ width: '100%', height: '100%' }}>
               <div style={{ position: 'relative', width: '100%', height: '100%' }}>
@@ -61,14 +63,14 @@ const AboutSection = () => {
                     position: 'absolute',
                     top: '0px',
                     left: '0px',
-                    padding: '20px 30px',
-                    fontSize: '34px',
+                    padding: 'clamp(15px, 1.5vw, 20px) clamp(20px, 2vw, 30px)',
+                    fontSize: 'clamp(24px, 2.5vw, 34px)',
                     fontWeight: '500',
                     backgroundColor: '#6b7280',
                     color: 'white',
-                    borderRadius: '90px',
-                    width: '700px',
-                    height: '120px',
+                    borderRadius: 'clamp(60px, 5vw, 90px)',
+                    width: '100%',
+                    height: '100%',
                     boxSizing: 'border-box'
                   }}
                 />
@@ -77,16 +79,16 @@ const AboutSection = () => {
                   className="transition-colors duration-300"
                   style={{
                     position: 'absolute',
-                    right: '12px',
+                    right: 'clamp(8px, 1vw, 12px)',
                     top: '50%',
                     transform: 'translateY(-50%)',
                     backgroundColor: '#374151',
                     color: 'white',
-                    padding: '12px 20px',
+                    padding: 'clamp(8px, 1vw, 12px) clamp(15px, 1.5vw, 20px)',
                     borderRadius: '50px',
                     border: 'none',
                     cursor: 'pointer',
-                    fontSize: '18px'
+                    fontSize: 'clamp(14px, 1.2vw, 18px)'
                   }}
                   onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#000000'}
                   onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#777b82ff'}
@@ -97,13 +99,13 @@ const AboutSection = () => {
             </form>
           </div>
 
-          {/* Right Side - Response Container - Absolute Positioning */}
+          {/* Right Side - Response Container - Responsive Sizing */}
           <div style={{ 
             position: 'absolute',
             top: '0px',
-            right: '0px',
-            width: '750px',
-            height: '800px'
+            right: '8%',
+            width: 'clamp(550px, 40vw, 750px)',
+            height: 'clamp(600px, 45vw, 800px)'
           }}>
             <div 
               className="font-aldrich crystal-glass"
@@ -111,9 +113,9 @@ const AboutSection = () => {
                 position: 'absolute',
                 top: '0px',
                 left: '0px',
-                width: '750px',
-                height: '800px',
-                padding: '60px',
+                width: '100%',
+                height: '100%',
+                padding: 'clamp(40px, 4vw, 60px)',
                 borderRadius: '26px',
                 boxSizing: 'border-box',
                 
@@ -179,7 +181,7 @@ const AboutSection = () => {
               <p 
                 className="crystal-glass-content"
                 style={{
-                  fontSize: '40px',
+                  fontSize: 'clamp(28px, 3vw, 40px)',
                   lineHeight: '2',
                   color: '#ffffff',
                   margin: '0',
