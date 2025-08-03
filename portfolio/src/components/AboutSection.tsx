@@ -1,10 +1,75 @@
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import DarkVeil from './DarkVeil/DarkVeil'
+import RunwayAnimation from './RunwayAnimation'
+
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger)
 
 const AboutSection = () => {
   const containerRef = useRef<HTMLElement>(null)
+  const queryContainerRef = useRef<HTMLDivElement>(null)
+  const responseContainerRef = useRef<HTMLDivElement>(null)
   const [query, setQuery] = useState('')
   const [response, setResponse] = useState("I'm passionate about AI, systems, and networking. I've built a Rust-based ML OS, Go microservices with gRPC, and use tools like LangGraph and Gemini for smart automation. I thrive on building, optimizing, and learning fast.")
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Set initial state - containers off-screen
+      gsap.set(queryContainerRef.current, { 
+        x: -200, 
+        opacity: 0 
+      })
+      gsap.set(responseContainerRef.current, { 
+        x: 200, 
+        opacity: 0 
+      })
+
+      // Create scroll-triggered animations
+      ScrollTrigger.create({
+        trigger: containerRef.current,
+        start: "top 80%",
+        end: "top 20%",
+        onEnter: () => {
+          // Query container slides in from left
+          gsap.to(queryContainerRef.current, {
+            x: 0,
+            opacity: 1,
+            duration: 1.2,
+            ease: "power3.out"
+          })
+          
+          // Response container slides in from right (slight delay)
+          gsap.to(responseContainerRef.current, {
+            x: 0,
+            opacity: 1,
+            duration: 1.2,
+            delay: 0.3,
+            ease: "power3.out"
+          })
+        },
+        onLeaveBack: () => {
+          // Reset to initial state when scrolling back up
+          gsap.to(queryContainerRef.current, {
+            x: -200,
+            opacity: 0,
+            duration: 0.8,
+            ease: "power2.in"
+          })
+          gsap.to(responseContainerRef.current, {
+            x: 200,
+            opacity: 0,
+            duration: 0.8,
+            delay: 0.1,
+            ease: "power2.in"
+          })
+        }
+      })
+    }, containerRef)
+
+    return () => ctx.revert()
+  }, [])
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -30,6 +95,20 @@ const AboutSection = () => {
         />
       </div>
 
+      {/* Runway Animation - Full Screen Billboard */}
+      <div 
+        className="absolute pointer-events-none" 
+        style={{ 
+          zIndex: 5,
+          top: 'clamp(140px, 12vw, 180px)',
+          left: '0',
+          width: '100vw',
+          height: '800px'
+        }}
+      >
+        <RunwayAnimation />
+      </div>
+
       {/* Main Content */}
       <div className="relative z-10 min-h-screen flex items-center justify-center">
         <div 
@@ -44,13 +123,15 @@ const AboutSection = () => {
         >
           
           {/* Left Side - Query Input - With Glass Effect */}
-          <div style={{ 
-            position: 'absolute',
-            top: '0px',
-            left: '5%',
-            width: 'clamp(600px, 40vw, 800px)',
-            height: 'clamp(100px, 8vw, 140px)'
-          }}>
+          <div 
+            ref={queryContainerRef}
+            style={{ 
+              position: 'absolute',
+              top: '0px',
+              left: '5%',
+              width: 'clamp(600px, 40vw, 800px)',
+              height: 'clamp(100px, 8vw, 140px)'
+            }}>
             <div 
               className="crystal-glass"
               style={{
@@ -149,13 +230,15 @@ const AboutSection = () => {
           </div>
 
           {/* Right Side - Response Container - Increased Sizing */}
-          <div style={{ 
-            position: 'absolute',
-            top: '0px',
-            right: '5%',
-            width: 'clamp(650px, 45vw, 850px)',
-            height: 'clamp(700px, 50vw, 900px)'
-          }}>
+          <div 
+            ref={responseContainerRef}
+            style={{ 
+              position: 'absolute',
+              top: '0px',
+              right: '5%',
+              width: 'clamp(650px, 45vw, 850px)',
+              height: 'clamp(700px, 50vw, 900px)'
+            }}>
             <div 
               className="font-aldrich crystal-glass"
               style={{
