@@ -118,10 +118,20 @@ const HeroSection = () => {
 
   return (
     <main ref={containerRef} className="relative w-full h-screen overflow-hidden bg-white">
-      {/* Background Image - Curtain Effect with rounded bottom corners, cut above text */}
-      <div className="absolute top-0 left-0 right-0 h-[calc(100vh-300px)]">
-        <div className="w-full h-full rounded-b-[3rem] overflow-hidden px-4 sm:px-6 md:px-8 lg:px-12">
-          <div ref={imageRef} className="w-full h-full rounded-b-[3rem] overflow-hidden">
+      {/* FRAME 1: Background Image Container - Fixed Dimensions */}
+      <div 
+        className="absolute top-0 left-0 right-0 z-10"
+        style={{ height: 'calc(100vh - 300px)' }}
+      >
+        <div 
+          className="w-full h-full overflow-hidden px-4 sm:px-6 md:px-8 lg:px-12"
+          style={{ borderRadius: '0 0 48px 48px' }}
+        >
+          <div 
+            ref={imageRef} 
+            className="w-full h-full overflow-hidden"
+            style={{ borderRadius: '0 0 48px 48px' }}
+          >
             <img 
               src="/images/aldrin/aldrin_profile2.jpeg" 
               alt="Aldrin Lijo - Full Stack Developer Portfolio" 
@@ -129,33 +139,66 @@ const HeroSection = () => {
               loading="eager"
               decoding="async"
               fetchPriority="high"
+              style={{ 
+                width: '100%', 
+                height: '100%',
+                objectFit: 'cover',
+                objectPosition: 'center'
+              }}
             />
           </div>
         </div>
       </div>
 
-      {/* Bottom Text Section - Well structured with rounded top corners, positioned at bottom */}
-      <div className="absolute bottom-0 left-0 right-0 bg-white rounded-t-[2rem] h-[250px] flex items-center">
-        <div className="flex items-end justify-between px-12 py-6 w-full mt-12">
+      {/* FRAME 2: Text Container - Fixed Dimensions */}
+      <div 
+        className="absolute bottom-0 left-0 right-0 bg-white z-20"
+        style={{ 
+          height: '250px',
+          borderRadius: '32px 32px 0 0'
+        }}
+      >
+        <div 
+          className="flex items-end justify-between w-full"
+          style={{ 
+            padding: '24px 48px',
+            marginTop: '48px',
+            height: '100%'
+          }}
+        >
           
-          {/* ALDRIN Text - Left Side */}
-          <div className="flex-1 flex justify-end pr-16">
+          {/* FRAME 2A: ALDRIN Text Container - Left Side */}
+          <div 
+            className="flex-1 flex justify-end"
+            style={{ paddingRight: '64px' }}
+          >
             <h1 
               ref={aldrinRef}
-              className="uniform-text font-black text-black tracking-tight leading-none font-aldrich"
+              className="font-black text-black tracking-tight leading-none font-aldrich"
+              style={{ 
+                fontSize: '16rem',
+                lineHeight: '1'
+              }}
             >
               ALDRIN
             </h1>
           </div>
           
-          {/* LIJO Text with Navigation on "O" - Right Side */}
-          <div className="flex-1 flex justify-start pl-16">
+          {/* FRAME 2B: LIJO Text Container - Right Side */}
+          <div 
+            className="flex-1 flex justify-start"
+            style={{ paddingLeft: '64px' }}
+          >
             <div className="flex items-end">
               
               {/* L */}
               <h1 
                 ref={lRef}
-                className="uniform-text font-black text-black tracking-tight leading-none font-aldrich"
+                className="font-black text-black tracking-tight leading-none font-aldrich"
+                style={{ 
+                  fontSize: '16rem',
+                  lineHeight: '1'
+                }}
               >
                 L
               </h1>
@@ -163,7 +206,11 @@ const HeroSection = () => {
               {/* I */}
               <h1 
                 ref={iRef}
-                className="uniform-text font-black text-black tracking-tight leading-none font-aldrich"
+                className="font-black text-black tracking-tight leading-none font-aldrich"
+                style={{ 
+                  fontSize: '16rem',
+                  lineHeight: '1'
+                }}
               >
                 I
               </h1>
@@ -171,7 +218,11 @@ const HeroSection = () => {
               {/* J */}
               <h1 
                 ref={joRef}
-                className="uniform-text font-black text-black tracking-tight leading-none font-aldrich"
+                className="font-black text-black tracking-tight leading-none font-aldrich"
+                style={{ 
+                  fontSize: '16rem',
+                  lineHeight: '1'
+                }}
               >
                 J
               </h1>
@@ -184,25 +235,47 @@ const HeroSection = () => {
                   onMouseLeave={handleNavLeave}
                   className="relative cursor-pointer group"
                 >
-                  <h1 className="uniform-text font-black text-black tracking-tight leading-none font-aldrich hover:text-gray-700 transition-colors">
+                  <h1 
+                    className="font-black text-black tracking-tight leading-none font-aldrich hover:text-gray-700 transition-colors"
+                    style={{ 
+                      fontSize: '16rem',
+                      lineHeight: '1'
+                    }}
+                  >
                     O
                   </h1>
                   
                   {/* Horizontal line through the center of O */}
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-3 bg-black rounded-full group-hover:bg-gray-700 transition-colors"></div>
+                  <div 
+                    className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black rounded-full group-hover:bg-gray-700 transition-colors"
+                    style={{ 
+                      width: '64px',
+                      height: '12px'
+                    }}
+                  ></div>
                 </div>
                 
                 {/* Navigation Items - Slide from left to right but arranged vertically */}
                 {/* Extended hover area to prevent premature closing */}
                 <div 
-                  className="absolute top-1/2 left-full transform -translate-y-1/2 ml-4 z-50"
+                  className="absolute top-1/2 left-full transform -translate-y-1/2 z-50"
+                  style={{ marginLeft: '16px' }}
                   onMouseEnter={handleNavHover}
                   onMouseLeave={handleNavLeave}
                 >
                   {/* Invisible bridge to maintain hover */}
-                  <div className="absolute right-full top-1/2 transform -translate-y-1/2 w-8 h-32 bg-transparent"></div>
+                  <div 
+                    className="absolute right-full top-1/2 transform -translate-y-1/2 bg-transparent"
+                    style={{ 
+                      width: '32px',
+                      height: '128px'
+                    }}
+                  ></div>
                   
-                  <div className="flex flex-col space-y-1">
+                  <div 
+                    className="flex flex-col"
+                    style={{ gap: '4px' }}
+                  >
                     {navItems.map((item, index) => (
                       <a
                         key={item}
@@ -210,9 +283,19 @@ const HeroSection = () => {
                         ref={(el) => {
                           if (el) navItemsRef.current[index] = el
                         }}
-                        className="opacity-0 translate-x-[-32px]"
+                        style={{
+                          opacity: 0,
+                          transform: 'translateX(-32px)'
+                        }}
                       >
-                        <span className="block bg-black text-white font-aldrich text-xs px-3 py-1.5 rounded-full hover:bg-gray-800 transition-colors whitespace-nowrap text-center">
+                        <span 
+                          className="block bg-black text-white font-aldrich hover:bg-gray-800 transition-colors whitespace-nowrap text-center"
+                          style={{
+                            fontSize: '12px',
+                            padding: '6px 12px',
+                            borderRadius: '20px'
+                          }}
+                        >
                           {item}
                         </span>
                       </a>
