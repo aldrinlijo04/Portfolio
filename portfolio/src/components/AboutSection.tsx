@@ -3,7 +3,6 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import DarkVeil from './DarkVeil/DarkVeil'
 import RunwayAnimation from './RunwayAnimation'
-import { useResponsive } from '../hooks/useResponsive'
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger)
@@ -14,7 +13,6 @@ const AboutSection = () => {
   const responseContainerRef = useRef<HTMLDivElement>(null)
   const [query, setQuery] = useState('')
   const [response, setResponse] = useState("I'm passionate about AI, systems, and networking. I've built a Rust-based ML OS, Go microservices with gRPC, and use tools like LangGraph and Gemini for smart automation. I thrive on building, optimizing, and learning fast.")
-  const { isMobile } = useResponsive()
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -99,7 +97,7 @@ const AboutSection = () => {
 
       {/* Runway Animation - Full Screen Billboard */}
       <div 
-        className="absolute pointer-events-none mobile-billboard" 
+        className="absolute pointer-events-none" 
         style={{ 
           zIndex: 5,
           top: 'clamp(140px, 12vw, 180px)',
@@ -114,32 +112,25 @@ const AboutSection = () => {
       {/* Main Content */}
       <div className="relative z-10 min-h-screen flex items-center justify-center">
         <div 
-          className="mobile-about-container"
           style={{ 
             position: 'relative',
             width: '100vw',
             maxWidth: '1920px',
-            height: isMobile ? 'auto' : '800px',
-            minHeight: isMobile ? '100vh' : '800px',
+            height: '800px',
             margin: '0 auto',
-            padding: isMobile ? '20px 5vw' : '0 5vw',
-            display: 'flex',
-            flexDirection: isMobile ? 'column' : 'row',
-            alignItems: isMobile ? 'flex-start' : 'center',
-            justifyContent: isMobile ? 'flex-start' : 'space-between'
+            padding: '0 5vw'
           }}
         >
           
           {/* Left Side - Query Input - With Glass Effect */}
           <div 
             ref={queryContainerRef}
-            className="mobile-query-container"
             style={{ 
               position: 'absolute',
               top: '0px',
               left: '5%',
-              width: 'clamp(300px, 90vw, 800px)',
-              height: 'clamp(80px, 12vw, 140px)'
+              width: 'clamp(600px, 40vw, 800px)',
+              height: 'clamp(100px, 8vw, 140px)'
             }}>
             <div 
               className="crystal-glass"
@@ -241,14 +232,12 @@ const AboutSection = () => {
           {/* Right Side - Response Container - Increased Sizing */}
           <div 
             ref={responseContainerRef}
-            className="mobile-response-container"
             style={{ 
               position: 'absolute',
-              top: isMobile ? 'clamp(120px, 18vw, 160px)' : '0px',
+              top: '0px',
               right: '5%',
-              left: isMobile ? '5%' : 'auto',
-              width: isMobile ? 'calc(90vw)' : 'clamp(650px, 45vw, 850px)',
-              height: isMobile ? 'clamp(400px, 60vh, 500px)' : 'clamp(700px, 50vw, 900px)'
+              width: 'clamp(650px, 45vw, 850px)',
+              height: 'clamp(700px, 50vw, 900px)'
             }}>
             <div 
               className="font-aldrich crystal-glass"

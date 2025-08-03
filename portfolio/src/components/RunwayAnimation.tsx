@@ -1,10 +1,8 @@
 import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
-import { useResponsive } from '../hooks/useResponsive'
 
 const RunwayAnimation = () => {
   const containerRef = useRef<HTMLDivElement>(null)
-  const { isMobile } = useResponsive()
 
   useEffect(() => {
     const container = containerRef.current
@@ -24,18 +22,17 @@ const RunwayAnimation = () => {
     messages.forEach((message, index) => {
       const element = document.createElement('div')
       element.textContent = message
-      element.className = 'billboard-text font-aldrich mobile-billboard-text'
+      element.className = 'billboard-text font-aldrich'
       element.style.cssText = `
         position: absolute;
-        font-size: ${isMobile ? 'clamp(20px, 5vw, 28px)' : 'clamp(36px, 5vw, 64px)'};
+        font-size: clamp(36px, 5vw, 64px);
         font-weight: 700;
         color: rgba(255, 255, 255, 0.8);
         white-space: nowrap;
-        top: ${isMobile ? 30 + index * 60 : 50 + index * 120}px;
+        top: ${50 + index * 120}px;
         left: -100vw;
         text-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
-        letter-spacing: ${isMobile ? '1px' : '3px'};
-        --index: ${index};
+        letter-spacing: 3px;
       `
       container.appendChild(element)
       textElements.push(element)
