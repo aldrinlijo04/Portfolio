@@ -121,7 +121,7 @@ const HeroSection = () => {
       {/* FRAME 1: Background Image Container - Fixed Dimensions */}
       <div 
         className="absolute top-0 left-0 right-0 z-10"
-        style={{ height: 'calc(100vh - 300px)' }}
+        style={{ height: 'calc(100vh - 260px)' }}
       >
         <div 
           className="w-full h-full overflow-hidden px-4 sm:px-6 md:px-8 lg:px-12"
@@ -130,7 +130,7 @@ const HeroSection = () => {
           <div 
             ref={imageRef} 
             className="w-full h-full overflow-hidden"
-            style={{ borderRadius: '0 0 48px 48px' }}
+            style={{ borderRadius: '0 0 64px 64px' }}
           >
             <img 
               src="/images/aldrin/aldrin_profile2.jpeg" 
